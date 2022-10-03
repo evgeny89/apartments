@@ -50,7 +50,7 @@ export default {
     async getServerData() {
       const response = await fetch(this.link);
       this.data = await response.json();
-      console.log(this.data);
+      this.selectedHouse = this.data.houses[0];
     },
     toggleModalShow(id = null) {
       if (id) {
