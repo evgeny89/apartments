@@ -1,0 +1,96 @@
+@import "./base.css";
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.house-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.house-item {
+  list-style: none;
+  cursor: pointer;
+  transition: .3s transform;
+  font-size: 12px;
+}
+
+.house-item:hover {
+  transform: scale(1.05);
+}
+
+.active {
+  color: #2f78a9;
+}
+
+.main {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin: -30px;
+}
+
+.section {
+  margin: 30px;
+}
+
+.entrance-title {
+  margin-left: 38px;
+  font-size: 14px;
+}
+
+.floor {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  grid-gap: 8px;
+}
+
+.floor__title {
+  text-align: right;
+}
+
+.build {
+  display: flex;
+  margin: -4px;
+}
+
+.flat {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #bbb540;
+  border: 1px solid #161e25;
+  margin: 4px;
+  cursor: pointer;
+}
+
+.back-stage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #00000060;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  padding: 20px;
+  background-color: #cecece;
+}
