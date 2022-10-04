@@ -42,7 +42,6 @@ export default {
     FilterComponent,
     SelectField,
     CheckboxField,
-    RangeField,
   },
   data() {
     return {

@@ -31,7 +31,6 @@ export default {
   },
   methods: {
     emitEvent() {
-      console.log(this.value)
       this.$emit("change-field", [this.field, this.value]);
     }
   }
