@@ -72,10 +72,30 @@ a,
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #bbb540;
   border: 1px solid #161e25;
+  color: #f3f3f3;
   margin: 4px;
   cursor: pointer;
+  font-size: 10px;
+}
+
+.default-color {
+  background-color: #ff8484;
+}
+.gray-color {
+  background-color: #a9a9a9;
+}
+.orange-color {
+  background-color: #ff9d39;
+}
+.yellow-color {
+  background-color: #dbb000;
+}
+.blue-color {
+  background-color: #1e6dda;
+}
+.green-color {
+  background-color: #5de13a;
 }
 
 .back-stage {
@@ -91,6 +111,37 @@ a,
 }
 
 .modal {
-  padding: 20px;
-  background-color: #cecece;
+  padding: 32px;
+  border-radius: 8px;
+  background-color: #fcfcfc;
+  position: relative;
+  font-size: 16px;
+}
+
+.modal__text:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+
+.modal__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 18px;
+  color: #24312e;
+  transition: .3s color;
+}
+.modal__btn:hover {
+  color: #2f78a9;
 }

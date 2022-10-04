@@ -2,7 +2,7 @@
   <div class="floor">
     <TextInformer :text="floor.floor" class-name="floor__title"/>
     <div class="build">
-      <FlatComponent v-for="flat in floor.flats" :key="flat.id" :flat="flat" @show-modal="emitShowModal"/>
+      <FlatComponent v-for="flat in floor.flats" :key="flat.id" :id="flat.id" @show-modal="emitShowModal"/>
     </div>
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
   methods: {
     emitShowModal(id) {
       this.$emit("show-modal", id)
-    }
+    },
   }
 }
 </script>

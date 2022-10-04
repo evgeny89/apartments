@@ -34,8 +34,8 @@ export default {
       data: {},
       link: "/data",
       selectedHouse: null,
-      tmpFlat: null,
       showModal: false,
+      tmpFlat: null,
     }
   },
   computed: {
@@ -44,13 +44,19 @@ export default {
     },
   },
   methods: {
-    selectHouse(name) {
-      this.selectedHouse = name;
-    },
     async getServerData() {
       const response = await fetch(this.link);
-      this.data = await response.json();
+      this.data  = await response.json();
       this.selectedHouse = this.data.houses[0];
+
+      const flatStatusList = new Set(Object.values(this.data.flats).map(flat => flat.status));
+      console.log(flatStatusList);
+    },
+    getFlatProperties(id) {
+      return this.data.flats[id];
+    },
+    selectHouse(name) {
+      this.selectedHouse = name;
     },
     toggleModalShow(id = null) {
       if (id) {
@@ -58,9 +64,9 @@ export default {
       }
 
       this.showModal = !this.showModal;
-    }
+    },
   },
-  mounted() {
+  created() {
     this.getServerData();
   },
 }
