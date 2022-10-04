@@ -6,14 +6,13 @@
 export default {
   name: "FlatItem",
   props: {
-    id: {
-      type: String,
+    flat: {
+      type: Object,
       required: true,
     }
   },
   data() {
     return {
-      flat: {},
       statuses: {
         "Выданы ключи": "gray-color",
         "Договор": "orange-color",
@@ -28,19 +27,19 @@ export default {
       return this.flat.plan_type;
     },
     getClassFromStatus() {
-      return this.getClassName(this.flat.status);
+      return `${this.flat.withoutInFilter ? "empty" : this.getClassName(this.flat.status)} ${this.checkLabel()}`;
     }
   },
   methods: {
     getClassName(status) {
       return this.statuses[status] || "default";
     },
+    checkLabel() {
+      return (this.flat.subsidy || this.flat.marginal || this.flat.renovation || this.flat.installment) && "label";
+    },
     showModal() {
       this.$emit("show-modal", this.flat.id)
     }
   },
-  created() {
-    this.flat = this.$root.getFlatProperties(this.id);
-  }
 }
 </script>
