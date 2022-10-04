@@ -1,5 +1,5 @@
 <template>
-  <div class="back-stage">
+  <div class="back-stage" @click="hide">
     <div class="modal">
       <button class="modal__btn" @click="hide" title="close">X</button>
       <p class="modal__text">{{ typeString }}</p>
